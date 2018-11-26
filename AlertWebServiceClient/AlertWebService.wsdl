@@ -1,0 +1,2536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://Alert.Concerto.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Alert.Concerto.com" xmlns:intf="http://Alert.Concerto.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.2RC2
+Built on Nov 16, 2004 (12:19:44 EST)-->
+ <wsdl:types>
+  <schema targetNamespace="http://Alert.Concerto.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="DCenterCordInfo">
+    <sequence>
+     <element name="AODFeedPortNum" type="xsd:int"/>
+     <element name="AWDPortNum" type="xsd:int"/>
+     <element name="CSLPortNum" type="xsd:int"/>
+     <element name="IPAddress" nillable="true" type="soapenc:string"/>
+     <element name="clientPortNum" type="xsd:int"/>
+     <element name="extLoggerPortNum" type="xsd:int"/>
+     <element name="serverId" type="xsd:int"/>
+     <element name="siteId" type="xsd:int"/>
+     <element name="tenantId" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="GetServerRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertEvaluationRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SubscribeToDocumentTypeResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpSystemAlertTypesRecordResponse">
+
+      <wsdl:part name="GetTlkpSystemAlertTypesRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SendServerUpdateNotificationRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertScheduleRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetApplicationAlertsRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentTypesRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertActionFieldRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertActionResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetApplicationAlertsByStartDateResponse">
+
+      <wsdl:part name="GetApplicationAlertsByStartDateReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ClearApplicationAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentTypesRecordResponse">
+
+      <wsdl:part name="GetTlkpDocumentTypesRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSiteRecordResponse">
+
+      <wsdl:part name="GetSiteRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertSchedulesRecordResponse">
+
+      <wsdl:part name="GetAlertSchedulesRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetApplicationAlertsFilterResponse">
+
+      <wsdl:part name="GetApplicationAlertsFilterReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SubscribeToDocumentTypeRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AcknowledgeSystemAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSystemAlertsFilterRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="xsd:int"/>
+
+      <wsdl:part name="in3" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionFieldRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpPriorityLevelRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSiteRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionParametersRecordByParameterIdRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionsRecordByActionResponse">
+
+      <wsdl:part name="GetTlkpActionsRecordByActionReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertActionParameterResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetServerTypeRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="SetClientTypeResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionParameter2Request">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertActionRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SendAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+      <wsdl:part name="in2" type="xsd:int"/>
+
+      <wsdl:part name="in3" type="xsd:int"/>
+
+      <wsdl:part name="in4" type="xsd:int"/>
+
+      <wsdl:part name="in5" type="xsd:int"/>
+
+      <wsdl:part name="in6" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetApplicationAlertsByStartDateRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpSystemAlertActionsRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionParametersRecordResponse">
+
+      <wsdl:part name="GetTlkpActionParametersRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertSchedulesRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AcknowledgeApplicationAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetWebServiceNameResponse">
+
+      <wsdl:part name="GetWebServiceNameReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AcknowledgeSystemAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpSystemAlertTypesRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentTypesRecordByClientTypeRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertScheduleResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertScheduleRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+      <wsdl:part name="in3" type="soapenc:string"/>
+
+      <wsdl:part name="in4" type="soapenc:string"/>
+
+      <wsdl:part name="in5" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertActionsRecordResponse">
+
+      <wsdl:part name="GetAlertActionsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertScheduleByScheduleIdRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertsRecordResponse">
+
+      <wsdl:part name="GetAlertsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertEvaluationsRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertsRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertEvaluation2Response">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionsRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSystemAlertsResponse">
+
+      <wsdl:part name="GetSystemAlertsReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertActionParameterRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertEvaluation2Request">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertEvaluationRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SendNetworkDocumentRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentFieldsRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetVersionRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetServerRecordResponse">
+
+      <wsdl:part name="GetServerRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertEvaluationResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentFieldTypesRecordResponse">
+
+      <wsdl:part name="GetTlkpDocumentFieldTypesRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SetClientTypeRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertResponse">
+
+      <wsdl:part name="InsertAlertReturn" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertActionResponse">
+
+      <wsdl:part name="InsertAlertActionReturn" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+      <wsdl:part name="in3" type="xsd:int"/>
+
+      <wsdl:part name="in4" type="soapenc:string"/>
+
+      <wsdl:part name="in5" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UnSubscribeToDocumentTypeRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertScheduleResponse">
+
+      <wsdl:part name="InsertAlertScheduleReturn" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSystemAlertsRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpSystemAlertActionsRecordResponse">
+
+      <wsdl:part name="GetTlkpSystemAlertActionsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertActionsRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionParameter2Response">
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionParameterResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionParametersRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+      <wsdl:part name="in3" type="xsd:int"/>
+
+      <wsdl:part name="in4" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertActionFieldsRecordResponse">
+
+      <wsdl:part name="GetAlertActionFieldsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertEvaluationResponse">
+
+      <wsdl:part name="InsertAlertEvaluationReturn" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertActionParameterRecordResponse">
+
+      <wsdl:part name="GetAlertActionParameterRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SendServerUpdateNotificationResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="ClearSystemAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetVersionResponse">
+
+      <wsdl:part name="GetVersionReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertActionParameterRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetRunningCenterCordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdatetAlertEvaluationRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertAction2Request">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertActionFieldsRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionFieldResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertEvaluationsRecordResponse">
+
+      <wsdl:part name="GetAlertEvaluationsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertActionFieldRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SendNetworkDocumentResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionField2Response">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionParametersRecordByParameterIdResponse">
+
+      <wsdl:part name="GetTlkpActionParametersRecordByParameterIdReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertsRecordByDocumentTypeResponse">
+
+      <wsdl:part name="GetAlertsRecordByDocumentTypeReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetApplicationAlertsResponse">
+
+      <wsdl:part name="GetApplicationAlertsReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentFieldsRecordResponse">
+
+      <wsdl:part name="GetTlkpDocumentFieldsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SendAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdatetAlertEvaluationResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentTypesRecordByClientTypeResponse">
+
+      <wsdl:part name="GetTlkpDocumentTypesRecordByClientTypeReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertActionParameterRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetAlertsRecordByDocumentTypeRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionField2Request">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertAction2Response">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpPriorityLevelRecordByPriorityLevelResponse">
+
+      <wsdl:part name="GetTlkpPriorityLevelRecordByPriorityLevelReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSystemAlertsByStartDateRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpDocumentFieldTypesRecordRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetServerTypeRecordResponse">
+
+      <wsdl:part name="GetServerTypeRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionsRecordByActionRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ClearSystemAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpPriorityLevelRecordByPriorityLevelRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertActionFieldResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertScheduleByScheduleIdResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="ClearApplicationAlertResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpSystemAlertStatesRecordResponse">
+
+      <wsdl:part name="GetTlkpSystemAlertStatesRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertScheduleRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+      <wsdl:part name="in3" type="soapenc:string"/>
+
+      <wsdl:part name="in4" type="soapenc:string"/>
+
+      <wsdl:part name="in5" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpActionsRecordResponse">
+
+      <wsdl:part name="GetTlkpActionsRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UnSubscribeToDocumentTypeResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertActionFieldResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetApplicationAlertsFilterRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+      <wsdl:part name="in3" type="xsd:int"/>
+
+      <wsdl:part name="in4" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateAlertScheduleResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSystemAlertsByStartDateResponse">
+
+      <wsdl:part name="GetSystemAlertsByStartDateReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetRunningCenterCordResponse">
+
+      <wsdl:part name="GetRunningCenterCordReturn" type="impl:DCenterCordInfo"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpSystemAlertStatesRecordRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetWebServiceNameRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="GetTlkpPriorityLevelRecordResponse">
+
+      <wsdl:part name="GetTlkpPriorityLevelRecordReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeleteAlertActionParameterRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertActionRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="xsd:int"/>
+
+      <wsdl:part name="in2" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="InsertAlertActionParameterResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="AcknowledgeApplicationAlertRequest">
+
+      <wsdl:part name="in0" type="xsd:int"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSystemAlertsFilterResponse">
+
+      <wsdl:part name="GetSystemAlertsFilterReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AlertWebService">
+
+      <wsdl:operation name="GetVersion">
+
+         <wsdl:input message="impl:GetVersionRequest" name="GetVersionRequest"/>
+
+         <wsdl:output message="impl:GetVersionResponse" name="GetVersionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ClearSystemAlert" parameterOrder="in0">
+
+         <wsdl:input message="impl:ClearSystemAlertRequest" name="ClearSystemAlertRequest"/>
+
+         <wsdl:output message="impl:ClearSystemAlertResponse" name="ClearSystemAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ClearApplicationAlert" parameterOrder="in0">
+
+         <wsdl:input message="impl:ClearApplicationAlertRequest" name="ClearApplicationAlertRequest"/>
+
+         <wsdl:output message="impl:ClearApplicationAlertResponse" name="ClearApplicationAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSiteRecord">
+
+         <wsdl:input message="impl:GetSiteRecordRequest" name="GetSiteRecordRequest"/>
+
+         <wsdl:output message="impl:GetSiteRecordResponse" name="GetSiteRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetServerTypeRecord">
+
+         <wsdl:input message="impl:GetServerTypeRecordRequest" name="GetServerTypeRecordRequest"/>
+
+         <wsdl:output message="impl:GetServerTypeRecordResponse" name="GetServerTypeRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetServerRecord">
+
+         <wsdl:input message="impl:GetServerRecordRequest" name="GetServerRecordRequest"/>
+
+         <wsdl:output message="impl:GetServerRecordResponse" name="GetServerRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpSystemAlertStatesRecord">
+
+         <wsdl:input message="impl:GetTlkpSystemAlertStatesRecordRequest" name="GetTlkpSystemAlertStatesRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpSystemAlertStatesRecordResponse" name="GetTlkpSystemAlertStatesRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpSystemAlertActionsRecord">
+
+         <wsdl:input message="impl:GetTlkpSystemAlertActionsRecordRequest" name="GetTlkpSystemAlertActionsRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpSystemAlertActionsRecordResponse" name="GetTlkpSystemAlertActionsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpSystemAlertTypesRecord">
+
+         <wsdl:input message="impl:GetTlkpSystemAlertTypesRecordRequest" name="GetTlkpSystemAlertTypesRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpSystemAlertTypesRecordResponse" name="GetTlkpSystemAlertTypesRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetApplicationAlertsByStartDate" parameterOrder="in0 in1 in2">
+
+         <wsdl:input message="impl:GetApplicationAlertsByStartDateRequest" name="GetApplicationAlertsByStartDateRequest"/>
+
+         <wsdl:output message="impl:GetApplicationAlertsByStartDateResponse" name="GetApplicationAlertsByStartDateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetApplicationAlerts" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:GetApplicationAlertsRequest" name="GetApplicationAlertsRequest"/>
+
+         <wsdl:output message="impl:GetApplicationAlertsResponse" name="GetApplicationAlertsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetApplicationAlertsFilter" parameterOrder="in0 in1 in2 in3 in4">
+
+         <wsdl:input message="impl:GetApplicationAlertsFilterRequest" name="GetApplicationAlertsFilterRequest"/>
+
+         <wsdl:output message="impl:GetApplicationAlertsFilterResponse" name="GetApplicationAlertsFilterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSystemAlertsFilter" parameterOrder="in0 in1 in2 in3">
+
+         <wsdl:input message="impl:GetSystemAlertsFilterRequest" name="GetSystemAlertsFilterRequest"/>
+
+         <wsdl:output message="impl:GetSystemAlertsFilterResponse" name="GetSystemAlertsFilterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSystemAlertsByStartDate" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:GetSystemAlertsByStartDateRequest" name="GetSystemAlertsByStartDateRequest"/>
+
+         <wsdl:output message="impl:GetSystemAlertsByStartDateResponse" name="GetSystemAlertsByStartDateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSystemAlerts" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetSystemAlertsRequest" name="GetSystemAlertsRequest"/>
+
+         <wsdl:output message="impl:GetSystemAlertsResponse" name="GetSystemAlertsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AcknowledgeApplicationAlert" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:AcknowledgeApplicationAlertRequest" name="AcknowledgeApplicationAlertRequest"/>
+
+         <wsdl:output message="impl:AcknowledgeApplicationAlertResponse" name="AcknowledgeApplicationAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AcknowledgeSystemAlert" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:AcknowledgeSystemAlertRequest" name="AcknowledgeSystemAlertRequest"/>
+
+         <wsdl:output message="impl:AcknowledgeSystemAlertResponse" name="AcknowledgeSystemAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionField2" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:DeleteAlertActionField2Request" name="DeleteAlertActionField2Request"/>
+
+         <wsdl:output message="impl:DeleteAlertActionField2Response" name="DeleteAlertActionField2Response"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionField" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertActionFieldRequest" name="DeleteAlertActionFieldRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertActionFieldResponse" name="DeleteAlertActionFieldResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionParameter2" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:DeleteAlertActionParameter2Request" name="DeleteAlertActionParameter2Request"/>
+
+         <wsdl:output message="impl:DeleteAlertActionParameter2Response" name="DeleteAlertActionParameter2Response"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionParameter" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertActionParameterRequest" name="DeleteAlertActionParameterRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertActionParameterResponse" name="DeleteAlertActionParameterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertScheduleByScheduleId" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertScheduleByScheduleIdRequest" name="DeleteAlertScheduleByScheduleIdRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertScheduleByScheduleIdResponse" name="DeleteAlertScheduleByScheduleIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertSchedule" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertScheduleRequest" name="DeleteAlertScheduleRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertScheduleResponse" name="DeleteAlertScheduleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertAction2" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertAction2Request" name="DeleteAlertAction2Request"/>
+
+         <wsdl:output message="impl:DeleteAlertAction2Response" name="DeleteAlertAction2Response"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertAction" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertActionRequest" name="DeleteAlertActionRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertActionResponse" name="DeleteAlertActionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertEvaluation2" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:DeleteAlertEvaluation2Request" name="DeleteAlertEvaluation2Request"/>
+
+         <wsdl:output message="impl:DeleteAlertEvaluation2Response" name="DeleteAlertEvaluation2Response"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertEvaluation" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertEvaluationRequest" name="DeleteAlertEvaluationRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertEvaluationResponse" name="DeleteAlertEvaluationResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlert" parameterOrder="in0">
+
+         <wsdl:input message="impl:DeleteAlertRequest" name="DeleteAlertRequest"/>
+
+         <wsdl:output message="impl:DeleteAlertResponse" name="DeleteAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetRunningCenterCord">
+
+         <wsdl:input message="impl:GetRunningCenterCordRequest" name="GetRunningCenterCordRequest"/>
+
+         <wsdl:output message="impl:GetRunningCenterCordResponse" name="GetRunningCenterCordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SetClientType" parameterOrder="in0">
+
+         <wsdl:input message="impl:SetClientTypeRequest" name="SetClientTypeRequest"/>
+
+         <wsdl:output message="impl:SetClientTypeResponse" name="SetClientTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SendServerUpdateNotification" parameterOrder="in0">
+
+         <wsdl:input message="impl:SendServerUpdateNotificationRequest" name="SendServerUpdateNotificationRequest"/>
+
+         <wsdl:output message="impl:SendServerUpdateNotificationResponse" name="SendServerUpdateNotificationResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UnSubscribeToDocumentType" parameterOrder="in0">
+
+         <wsdl:input message="impl:UnSubscribeToDocumentTypeRequest" name="UnSubscribeToDocumentTypeRequest"/>
+
+         <wsdl:output message="impl:UnSubscribeToDocumentTypeResponse" name="UnSubscribeToDocumentTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SubscribeToDocumentType" parameterOrder="in0">
+
+         <wsdl:input message="impl:SubscribeToDocumentTypeRequest" name="SubscribeToDocumentTypeRequest"/>
+
+         <wsdl:output message="impl:SubscribeToDocumentTypeResponse" name="SubscribeToDocumentTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SendNetworkDocument" parameterOrder="in0">
+
+         <wsdl:input message="impl:SendNetworkDocumentRequest" name="SendNetworkDocumentRequest"/>
+
+         <wsdl:output message="impl:SendNetworkDocumentResponse" name="SendNetworkDocumentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SendAlert" parameterOrder="in0 in1 in2 in3 in4 in5 in6">
+
+         <wsdl:input message="impl:SendAlertRequest" name="SendAlertRequest"/>
+
+         <wsdl:output message="impl:SendAlertResponse" name="SendAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionParametersRecordByParameterId" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:GetTlkpActionParametersRecordByParameterIdRequest" name="GetTlkpActionParametersRecordByParameterIdRequest"/>
+
+         <wsdl:output message="impl:GetTlkpActionParametersRecordByParameterIdResponse" name="GetTlkpActionParametersRecordByParameterIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionParametersRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetTlkpActionParametersRecordRequest" name="GetTlkpActionParametersRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpActionParametersRecordResponse" name="GetTlkpActionParametersRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpPriorityLevelRecordByPriorityLevel" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetTlkpPriorityLevelRecordByPriorityLevelRequest" name="GetTlkpPriorityLevelRecordByPriorityLevelRequest"/>
+
+         <wsdl:output message="impl:GetTlkpPriorityLevelRecordByPriorityLevelResponse" name="GetTlkpPriorityLevelRecordByPriorityLevelResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpPriorityLevelRecord">
+
+         <wsdl:input message="impl:GetTlkpPriorityLevelRecordRequest" name="GetTlkpPriorityLevelRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpPriorityLevelRecordResponse" name="GetTlkpPriorityLevelRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionsRecordByAction" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetTlkpActionsRecordByActionRequest" name="GetTlkpActionsRecordByActionRequest"/>
+
+         <wsdl:output message="impl:GetTlkpActionsRecordByActionResponse" name="GetTlkpActionsRecordByActionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionsRecord">
+
+         <wsdl:input message="impl:GetTlkpActionsRecordRequest" name="GetTlkpActionsRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpActionsRecordResponse" name="GetTlkpActionsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentFieldTypesRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetTlkpDocumentFieldTypesRecordRequest" name="GetTlkpDocumentFieldTypesRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpDocumentFieldTypesRecordResponse" name="GetTlkpDocumentFieldTypesRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentFieldsRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetTlkpDocumentFieldsRecordRequest" name="GetTlkpDocumentFieldsRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpDocumentFieldsRecordResponse" name="GetTlkpDocumentFieldsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentTypesRecordByClientType" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetTlkpDocumentTypesRecordByClientTypeRequest" name="GetTlkpDocumentTypesRecordByClientTypeRequest"/>
+
+         <wsdl:output message="impl:GetTlkpDocumentTypesRecordByClientTypeResponse" name="GetTlkpDocumentTypesRecordByClientTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentTypesRecord">
+
+         <wsdl:input message="impl:GetTlkpDocumentTypesRecordRequest" name="GetTlkpDocumentTypesRecordRequest"/>
+
+         <wsdl:output message="impl:GetTlkpDocumentTypesRecordResponse" name="GetTlkpDocumentTypesRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertActionFieldsRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetAlertActionFieldsRecordRequest" name="GetAlertActionFieldsRecordRequest"/>
+
+         <wsdl:output message="impl:GetAlertActionFieldsRecordResponse" name="GetAlertActionFieldsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertActionParameterRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetAlertActionParameterRecordRequest" name="GetAlertActionParameterRecordRequest"/>
+
+         <wsdl:output message="impl:GetAlertActionParameterRecordResponse" name="GetAlertActionParameterRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertSchedulesRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetAlertSchedulesRecordRequest" name="GetAlertSchedulesRecordRequest"/>
+
+         <wsdl:output message="impl:GetAlertSchedulesRecordResponse" name="GetAlertSchedulesRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertActionsRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetAlertActionsRecordRequest" name="GetAlertActionsRecordRequest"/>
+
+         <wsdl:output message="impl:GetAlertActionsRecordResponse" name="GetAlertActionsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertEvaluationsRecord" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetAlertEvaluationsRecordRequest" name="GetAlertEvaluationsRecordRequest"/>
+
+         <wsdl:output message="impl:GetAlertEvaluationsRecordResponse" name="GetAlertEvaluationsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertsRecordByDocumentType" parameterOrder="in0">
+
+         <wsdl:input message="impl:GetAlertsRecordByDocumentTypeRequest" name="GetAlertsRecordByDocumentTypeRequest"/>
+
+         <wsdl:output message="impl:GetAlertsRecordByDocumentTypeResponse" name="GetAlertsRecordByDocumentTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertsRecord">
+
+         <wsdl:input message="impl:GetAlertsRecordRequest" name="GetAlertsRecordRequest"/>
+
+         <wsdl:output message="impl:GetAlertsRecordResponse" name="GetAlertsRecordResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertActionField" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:UpdateAlertActionFieldRequest" name="UpdateAlertActionFieldRequest"/>
+
+         <wsdl:output message="impl:UpdateAlertActionFieldResponse" name="UpdateAlertActionFieldResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertActionField" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:InsertAlertActionFieldRequest" name="InsertAlertActionFieldRequest"/>
+
+         <wsdl:output message="impl:InsertAlertActionFieldResponse" name="InsertAlertActionFieldResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertActionParameter" parameterOrder="in0 in1 in2">
+
+         <wsdl:input message="impl:UpdateAlertActionParameterRequest" name="UpdateAlertActionParameterRequest"/>
+
+         <wsdl:output message="impl:UpdateAlertActionParameterResponse" name="UpdateAlertActionParameterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertActionParameter" parameterOrder="in0 in1 in2">
+
+         <wsdl:input message="impl:InsertAlertActionParameterRequest" name="InsertAlertActionParameterRequest"/>
+
+         <wsdl:output message="impl:InsertAlertActionParameterResponse" name="InsertAlertActionParameterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertSchedule" parameterOrder="in0 in1 in2 in3 in4 in5">
+
+         <wsdl:input message="impl:UpdateAlertScheduleRequest" name="UpdateAlertScheduleRequest"/>
+
+         <wsdl:output message="impl:UpdateAlertScheduleResponse" name="UpdateAlertScheduleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertSchedule" parameterOrder="in0 in1 in2 in3 in4 in5">
+
+         <wsdl:input message="impl:InsertAlertScheduleRequest" name="InsertAlertScheduleRequest"/>
+
+         <wsdl:output message="impl:InsertAlertScheduleResponse" name="InsertAlertScheduleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertAction" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:UpdateAlertActionRequest" name="UpdateAlertActionRequest"/>
+
+         <wsdl:output message="impl:UpdateAlertActionResponse" name="UpdateAlertActionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertAction" parameterOrder="in0 in1 in2">
+
+         <wsdl:input message="impl:InsertAlertActionRequest" name="InsertAlertActionRequest"/>
+
+         <wsdl:output message="impl:InsertAlertActionResponse" name="InsertAlertActionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdatetAlertEvaluation" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:UpdatetAlertEvaluationRequest" name="UpdatetAlertEvaluationRequest"/>
+
+         <wsdl:output message="impl:UpdatetAlertEvaluationResponse" name="UpdatetAlertEvaluationResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertEvaluation" parameterOrder="in0 in1">
+
+         <wsdl:input message="impl:InsertAlertEvaluationRequest" name="InsertAlertEvaluationRequest"/>
+
+         <wsdl:output message="impl:InsertAlertEvaluationResponse" name="InsertAlertEvaluationResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlert" parameterOrder="in0 in1 in2 in3 in4">
+
+         <wsdl:input message="impl:UpdateAlertRequest" name="UpdateAlertRequest"/>
+
+         <wsdl:output message="impl:UpdateAlertResponse" name="UpdateAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlert" parameterOrder="in0 in1 in2 in3 in4 in5">
+
+         <wsdl:input message="impl:InsertAlertRequest" name="InsertAlertRequest"/>
+
+         <wsdl:output message="impl:InsertAlertResponse" name="InsertAlertResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetWebServiceName">
+
+         <wsdl:input message="impl:GetWebServiceNameRequest" name="GetWebServiceNameRequest"/>
+
+         <wsdl:output message="impl:GetWebServiceNameResponse" name="GetWebServiceNameResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AlertWebServiceSoapBinding" type="impl:AlertWebService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="GetVersion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetVersionRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetVersionResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ClearSystemAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ClearSystemAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ClearSystemAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ClearApplicationAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ClearApplicationAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ClearApplicationAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSiteRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetSiteRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetSiteRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetServerTypeRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetServerTypeRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetServerTypeRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetServerRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetServerRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetServerRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpSystemAlertStatesRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpSystemAlertStatesRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpSystemAlertStatesRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpSystemAlertActionsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpSystemAlertActionsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpSystemAlertActionsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpSystemAlertTypesRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpSystemAlertTypesRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpSystemAlertTypesRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetApplicationAlertsByStartDate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetApplicationAlertsByStartDateRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetApplicationAlertsByStartDateResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetApplicationAlerts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetApplicationAlertsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetApplicationAlertsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetApplicationAlertsFilter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetApplicationAlertsFilterRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetApplicationAlertsFilterResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSystemAlertsFilter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetSystemAlertsFilterRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetSystemAlertsFilterResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSystemAlertsByStartDate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetSystemAlertsByStartDateRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetSystemAlertsByStartDateResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSystemAlerts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetSystemAlertsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetSystemAlertsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AcknowledgeApplicationAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AcknowledgeApplicationAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AcknowledgeApplicationAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AcknowledgeSystemAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AcknowledgeSystemAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AcknowledgeSystemAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionField2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertActionField2Request">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertActionField2Response">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionField">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertActionFieldRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertActionFieldResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionParameter2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertActionParameter2Request">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertActionParameter2Response">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertActionParameter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertActionParameterRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertActionParameterResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertScheduleByScheduleId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertScheduleByScheduleIdRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertScheduleByScheduleIdResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertSchedule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertScheduleRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertScheduleResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertAction2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertAction2Request">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertAction2Response">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertAction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertActionRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertActionResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertEvaluation2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertEvaluation2Request">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertEvaluation2Response">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlertEvaluation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertEvaluationRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertEvaluationResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DeleteAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeleteAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeleteAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetRunningCenterCord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetRunningCenterCordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetRunningCenterCordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SetClientType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SetClientTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SetClientTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SendServerUpdateNotification">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SendServerUpdateNotificationRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SendServerUpdateNotificationResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UnSubscribeToDocumentType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UnSubscribeToDocumentTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UnSubscribeToDocumentTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SubscribeToDocumentType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SubscribeToDocumentTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SubscribeToDocumentTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SendNetworkDocument">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SendNetworkDocumentRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SendNetworkDocumentResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SendAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SendAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SendAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionParametersRecordByParameterId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpActionParametersRecordByParameterIdRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpActionParametersRecordByParameterIdResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionParametersRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpActionParametersRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpActionParametersRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpPriorityLevelRecordByPriorityLevel">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpPriorityLevelRecordByPriorityLevelRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpPriorityLevelRecordByPriorityLevelResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpPriorityLevelRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpPriorityLevelRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpPriorityLevelRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionsRecordByAction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpActionsRecordByActionRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpActionsRecordByActionResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpActionsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpActionsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpActionsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentFieldTypesRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpDocumentFieldTypesRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpDocumentFieldTypesRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentFieldsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpDocumentFieldsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpDocumentFieldsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentTypesRecordByClientType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpDocumentTypesRecordByClientTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpDocumentTypesRecordByClientTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetTlkpDocumentTypesRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetTlkpDocumentTypesRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetTlkpDocumentTypesRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertActionFieldsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertActionFieldsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertActionFieldsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertActionParameterRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertActionParameterRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertActionParameterRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertSchedulesRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertSchedulesRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertSchedulesRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertActionsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertActionsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertActionsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertEvaluationsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertEvaluationsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertEvaluationsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertsRecordByDocumentType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertsRecordByDocumentTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertsRecordByDocumentTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetAlertsRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetAlertsRecordRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetAlertsRecordResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertActionField">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateAlertActionFieldRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateAlertActionFieldResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertActionField">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InsertAlertActionFieldRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InsertAlertActionFieldResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertActionParameter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateAlertActionParameterRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateAlertActionParameterResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertActionParameter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InsertAlertActionParameterRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InsertAlertActionParameterResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertSchedule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateAlertScheduleRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateAlertScheduleResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertSchedule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InsertAlertScheduleRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InsertAlertScheduleResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlertAction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateAlertActionRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateAlertActionResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertAction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InsertAlertActionRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InsertAlertActionResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdatetAlertEvaluation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdatetAlertEvaluationRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdatetAlertEvaluationResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlertEvaluation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InsertAlertEvaluationRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InsertAlertEvaluationResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InsertAlert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InsertAlertRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InsertAlertResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetWebServiceName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetWebServiceNameRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetWebServiceNameResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://Alert.Concerto.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AlertWebServiceService">
+
+      <wsdl:port binding="impl:AlertWebServiceSoapBinding" name="AlertWebService">
+
+         <wsdlsoap:address location="http://192.168.156.104:8180/AlertWebService/services/AlertWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
