@@ -11,8 +11,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    std::string endpoint{ argv[1] };
-    endpoint.append(":").append(argv[2]);
+    std::string endpoint{ "https://" };
+    endpoint.append(argv[1]).append(":").append(argv[2]).append("/AlertWebService/services/AlertWebService");
 
     std::string centerCordIPAddress;
     int centerCordAODFeedPortNum = 0;
@@ -20,51 +20,55 @@ int main(int argc, char **argv)
     int answer = 0;
 
     std::cout << "Testing AlertWebService endpoint: " << endpoint << "\n";
-    AlertWebServiceSoapBindingProxy alertProxy(0, 0);
-    alertProxy.soap_endpoint = endpoint.c_str();
-    ns1__GetRunningCenterCordResponse eproResponse;
 
     try
     {
+        AlertWebServiceSoapBindingProxy alertProxy(0, 0);
+        alertProxy.soap_endpoint = endpoint.c_str();
+        ns1__GetRunningCenterCordResponse eproResponse;
+
+        std::cout << "initialising ssl...\n";
+        alertProxy.initSSL();
+
+        std::cout << "Calling GetRunningCenterCord";
         answer = alertProxy.GetRunningCenterCord(eproResponse);
+        std::cout << "Answer:" << answer << "\n";
+
+        if (answer == 0)
+        {
+            std::string strCCIPAddr = *eproResponse.GetRunningCenterCordReturn->IPAddress;
+            std::cout << "CenterCordInfo:(" << strCCIPAddr
+                << "), AODFeedPort:(" << eproResponse.GetRunningCenterCordReturn->AODFeedPortNum
+                << "), CSL Port:(" << eproResponse.GetRunningCenterCordReturn->CSLPortNum << ")";
+
+            if (eproResponse.GetRunningCenterCordReturn->IPAddress)
+            {
+                centerCordIPAddress = *eproResponse.GetRunningCenterCordReturn->IPAddress;
+            }
+            if (eproResponse.GetRunningCenterCordReturn->AODFeedPortNum)
+            {
+                centerCordAODFeedPortNum = eproResponse.GetRunningCenterCordReturn->AODFeedPortNum;
+            }
+            if (eproResponse.GetRunningCenterCordReturn->CSLPortNum)
+            {
+                centerCordCSLPortNum = eproResponse.GetRunningCenterCordReturn->CSLPortNum;
+            }
+            if (0 == centerCordIPAddress.length() || 0 == centerCordCSLPortNum || 0 == centerCordAODFeedPortNum)
+            {
+                std::cout << "No valid IP Address or AODFeed port number from CenterCord for Dialer\n";
+            }
+        }
+        else
+        {
+            std::cout << " received " << answer << " while connecting to AlertWebService.";
+            alertProxy.soap_stream_fault(std::cout);
+        }
+        alertProxy.destroy();
     }
-    catch (const std::exception&)
+    catch (...)
     {
         std::cout << "Exception calling AlertWebService endpoint\n";
     }
-
-    std::cout << "Answer:" << answer;
-    if (answer == 0)
-    {
-        std::string strCCIPAddr = *eproResponse.GetRunningCenterCordReturn->IPAddress;
-        std::cout << "CenterCordInfo:(" << strCCIPAddr
-            << "), AODFeedPort:(" << eproResponse.GetRunningCenterCordReturn->AODFeedPortNum
-            << "), CSL Port:(" << eproResponse.GetRunningCenterCordReturn->CSLPortNum << ")";
-
-        if (eproResponse.GetRunningCenterCordReturn->IPAddress)
-        {
-            centerCordIPAddress = *eproResponse.GetRunningCenterCordReturn->IPAddress;
-        }
-        if (eproResponse.GetRunningCenterCordReturn->AODFeedPortNum)
-        {
-            centerCordAODFeedPortNum = eproResponse.GetRunningCenterCordReturn->AODFeedPortNum;
-        }
-        if (eproResponse.GetRunningCenterCordReturn->CSLPortNum)
-        {
-            centerCordCSLPortNum = eproResponse.GetRunningCenterCordReturn->CSLPortNum;
-        }
-        if (0 == centerCordIPAddress.length() || 0 == centerCordCSLPortNum || 0 == centerCordAODFeedPortNum)
-        {
-            std::cout << "Not valid IP Address or AODFeed port number from CenterCord for Dialer\n";
-        }
-    }
-    else
-    {
-        std::cout << " received " << answer << " while connecting to AlertWebService.";
-        alertProxy.soap_stream_fault(std::cout);
-    }
-
-    alertProxy.destroy();
 
     return 0;
 }

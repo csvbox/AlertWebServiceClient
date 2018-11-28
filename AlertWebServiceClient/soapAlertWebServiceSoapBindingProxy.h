@@ -338,5 +338,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         virtual int GetWebServiceName(std::string &GetWebServiceNameReturn)
         { return this->GetWebServiceName(NULL, NULL, GetWebServiceNameReturn); }
         virtual int GetWebServiceName(const char *soap_endpoint, const char *soap_action, std::string &GetWebServiceNameReturn);
+
+        // ssl support
+        void initSSL();
     };
 #endif

@@ -3914,3 +3914,28 @@ int AlertWebServiceSoapBindingProxy::GetWebServiceName(const char *endpoint, con
 	return soap_closesock(soap);
 }
 /* End of client proxy code */
+
+// ssl support
+void AlertWebServiceSoapBindingProxy::initSSL()
+{
+    try
+    {
+        soap_ssl_init();
+        if (soap_ssl_client_context(soap,
+            SOAP_SSL_NO_AUTHENTICATION, /* use SOAP_SSL_DEFAULT in production code */
+            NULL,       /* keyfile: required only when client must authenticate to
+                           server (see SSL docs on how to obtain this file) */
+            NULL,       /* password to read the keyfile */
+            NULL,      /* optional cacert file to store trusted certificates */
+            NULL,      /* optional capath to directory with trusted certificates */
+            NULL      /* if randfile!=NULL: use a file with random data to seed randomness */
+        ))
+        {
+            soap_print_fault(stderr);
+        }
+    }
+    catch (...)
+    {
+        std::cout << "exception in initSSL\n";
+    }
+}
