@@ -4906,7 +4906,13 @@ static int
 tcp_gethost(struct soap *soap, const char *addr, struct in_addr *inaddr)
 {
   soap_int32 iadd = -1;
-  struct hostent hostent, *host = &hostent;
+  struct addrinfo *result = NULL;
+  struct addrinfo hints;
+  ZeroMemory(&hints, sizeof(hints));
+  hints.ai_family = AF_INET;
+  hints.ai_socktype = SOCK_STREAM;
+  hints.ai_protocol = IPPROTO_TCP;
+  struct sockaddr_in  *sockaddr_ip;
 #ifdef VXWORKS
   int hostint; /* vxWorks compatible */
   /* inet_addr(), and hostGetByName() expect "char *"; addr is a "const char *". */
@@ -4928,17 +4934,15 @@ tcp_gethost(struct soap *soap, const char *addr, struct in_addr *inaddr)
     return SOAP_OK;
   }
 #if defined(__GLIBC__) || (defined(HAVE_GETHOSTBYNAME_R) && (defined(FREEBSD) || defined(__FreeBSD__))) || defined(__ANDROID__)
-  if (gethostbyname_r(addr, &hostent, soap->buf, sizeof(soap->buf), &host, &soap->errnum) < 0)
-    host = NULL;
+  getaddrinfo(addr, "", &hints, &result);
 #elif defined(_AIX43) || ((defined(TRU64) || defined(HP_UX)) && defined(HAVE_GETHOSTBYNAME_R))
   memset((void*)&ht_data, 0, sizeof(ht_data));
-  if (gethostbyname_r(addr, &hostent, &ht_data) < 0)
+  if (getaddrinfo(addr, "", &hints, &result) != 0)
   {
-    host = NULL;
     soap->errnum = h_errno;
   }
 #elif defined(HAVE_GETHOSTBYNAME_R)
-  host = gethostbyname_r(addr, &hostent, soap->buf, sizeof(soap->buf), &soap->errnum);
+  getaddrinfo(addr, "", &hints, &result);
 #elif defined(VXWORKS)
   /* vxWorks compatible */
   /* If the DNS resolver library resolvLib has been configured in the vxWorks
@@ -4947,19 +4951,16 @@ tcp_gethost(struct soap *soap, const char *addr, struct in_addr *inaddr)
   hostint = hostGetByName((char*)addr);
   if (hostint == ERROR)
   {
-    host = NULL;
     soap->errnum = soap_errno;
   }
 #else
 #ifdef AS400
-  host = gethostbyname((void*)addr);
 #else
-  host = gethostbyname((char*)addr);
 #endif
-  if (!host)
+  if (getaddrinfo(addr, "", &hints, &result) != 0)
     soap->errnum = h_errno;
 #endif
-  if (!host)
+  if (!result)
   {
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Host name not found\n"));
     return SOAP_ERR;
@@ -4967,8 +4968,8 @@ tcp_gethost(struct soap *soap, const char *addr, struct in_addr *inaddr)
 #ifdef VXWORKS
   inaddr->s_addr = hostint; /* vxWorks compatible */
 #else
-  if (soap_memcpy((void*)inaddr, sizeof(struct in_addr), (const void*)host->h_addr, (size_t)host->h_length))
-    return soap->error = SOAP_EOM;
+  sockaddr_ip = (struct sockaddr_in *)result[0].ai_addr;
+  memcpy(inaddr, &sockaddr_ip->sin_addr, result[0].ai_addrlen);
 #endif
   return SOAP_OK;
 }

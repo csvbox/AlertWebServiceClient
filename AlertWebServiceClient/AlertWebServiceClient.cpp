@@ -30,7 +30,7 @@ int main(int argc, char **argv)
         std::cout << "initialising ssl...\n";
         alertProxy.initSSL();
 
-        std::cout << "Calling GetRunningCenterCord";
+        std::cout << "Calling GetRunningCenterCord\n";
         answer = alertProxy.GetRunningCenterCord(eproResponse);
         std::cout << "Answer:" << answer << "\n";
 
